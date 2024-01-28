@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&display=swap');
+
+:root {
+	/* Gradient colours */
+
+	--clr-gradient-1: #6e2ca0;
+	--clr-gradient-2: #9175e9;
+	--clr-gradient-3: #d1adec;
+
+	--clr-overlay: rgba(110, 44, 160, 0.8);
+
+	--clr-netural: #fff;
+
+	--ff-primary: 'Lato', Arial, sans-serif;
+	--ff-accent: 'Pacifico', Handwriting;
+
+	--fc-neutral: #333;
+	--fc-dark: #000;
+	--fc-gradient-1: rgba(110, 44, 160);
+	--fc-gradient-2: rgba(145, 117, 233, 1);
+	--fc-gradient-3: rgba(209, 173, 236, 1);
+
+	--fw-light: 300;
+	--fw-regular: 400;
+	--fw-bold: 900;
+
+	--fs-heading: 3rem;
+	--fs-sub-heading: 2rem;
+	--fs-nav-item: 1.2rem;
+	--fs-form: 1rem;
+
+	--navbar-height: 100px;
+
+	--bg-gradient: linear-gradient(
+		108deg,
+		var(--clr-gradient-1) 0%,
+		var(--clr-gradient-2) 75%,
+		var(--clr-gradient-3) 100%
+	);
+}
+
+/* Resets */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin, padding and inherit font for all */
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'],
+li {
+	list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	height: 100vh;
+	font-family: var(--ff-primary);
+	color: var(--fc-neutral);
+}
+
+h1,
+h2 {
+	font-weight: var(--fw-bold);
+	line-height: 1.2;
+}
+
+/* Set core body defaults */
+body {
+	text-rendering: optimizeSpeed;
+	line-height: 1.6;
+}
+
+/* Remove default hyperlink styling */
+a {
+	text-decoration: none;
+	color: var(--fc-dark);
+	padding: 5px 0;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+svg,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* Utility classes */
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	height: 100%;
+}
+
+.flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.grid {
+	display: grid;
+	align-items: center;
+}
+
+/* Navbar Styling */
+
+i {
+	margin-right: 15px;
+}
+
+.navbar {
+	background-color: var(--clr-netural);
+	height: var(--navbar-height);
+}
+
+.navbar .flex {
+	justify-content: space-between;
+}
+
+.nav-items ul {
+	display: flex;
+	font-size: var(--fs-nav-item);
+	gap: 50px;
+}
+
+.nav-items a:hover,
+.nav-items a:focus-visible {
+	border-bottom: 2px solid var(--fc-neutral);
+}
+
+.logo-section {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.logo {
+	font-family: var(--ff-accent);
+	font-size: var(--fs-heading);
+	color: var(--fc-gradient-1);
+	width: 50px;
+}
+
+/* Hero Section Styling */
+
+.hero {
+	position: relative;
+	height: calc((100vh - var(--navbar-height)) - 20px);
+}
+
+.hero-msg {
+	color: var(--clr-netural);
+}
+
+.hero h1,
+h2 {
+	font-size: var(--fs-sub-heading);
+}
+
+.hero h1 {
+	padding-bottom: 20px;
+}
+
+.hero .grid {
+	justify-content: space-around;
+	grid-template-columns: 1fr 1fr;
+	padding: 40px;
+	gap: 40px;
+}
+
+.hero .container {
+	background-image: url(./assets/hero-img.jpg);
+	background-size: cover;
+}
+
+.signup-form {
+	background-color: var(--clr-overlay);
+	backdrop-filter: blur(5px);
+	color: black;
+	border-radius: 10px;
+	box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+	height: 400px;
+	padding: 20px;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+.signup-form input,
+select {
+	padding: 0.25rem;
+}
+
+.signup-form * {
+	width: 60%;
+}

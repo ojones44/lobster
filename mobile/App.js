@@ -1,9 +1,9 @@
+// React Native Paper
+import { PaperProvider, Text } from 'react-native-paper';
+import { lobsterTheme } from 'config/lobster.themeConfig';
+
 // Style imports
 import { useFonts } from 'expo-font';
-
-// Gluestack imports
-import { GluestackUIProvider, Text } from '@gluestack-ui/themed';
-import { config } from './config/gluestack-ui.config';
 
 // Nav imports
 import { NavigationContainer } from '@react-navigation/native';
@@ -12,12 +12,16 @@ import TabNavigator from './navigation/tab-navigator';
 
 // React imports
 import { useState } from 'react';
+import { AppRegistry } from 'react-native';
+import { name as appName } from './app.json';
 
 export default function App() {
-	const [isLoggedIn, setIsLoggedIn] = useState(true);
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 	const [fontsLoaded] = useFonts({
 		Pacifico: require('./assets/fonts/Pacifico-Regular.ttf'),
+		Ubuntu: require('./assets/fonts/Ubuntu-Regular.ttf'),
+		UbuntuBold: require('./assets/fonts/Ubuntu-Bold.ttf'),
 	});
 
 	if (!fontsLoaded) {
@@ -25,10 +29,12 @@ export default function App() {
 	}
 
 	return (
-		<NavigationContainer>
-			<GluestackUIProvider config={config}>
+		<PaperProvider theme={lobsterTheme}>
+			<NavigationContainer theme={lobsterTheme}>
 				{isLoggedIn ? <TabNavigator /> : <AuthStackNavigator />}
-			</GluestackUIProvider>
-		</NavigationContainer>
+			</NavigationContainer>
+		</PaperProvider>
 	);
 }
+
+AppRegistry.registerComponent(appName, () => App);

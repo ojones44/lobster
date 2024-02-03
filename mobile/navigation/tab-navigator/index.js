@@ -3,6 +3,7 @@ import FeedStackNavigator from '../feed-stack';
 import Profile from './screens/Profile';
 import Settings from './screens/Settings';
 import Messages from './screens/Messages';
+import { Colours } from '../../styles';
 
 import {
 	Setting4,
@@ -17,8 +18,8 @@ export default function TabNavigator() {
 	const OPTIONS = {
 		VARIANT: 'Bold',
 		SIZE: 32,
-		ACTIVE_COLOR: '#6e2ca0',
-		INACTIVE_COLOR: 'grey',
+		ACTIVE_COLOR: Colours.primary,
+		INACTIVE_COLOR: Colours.neutrals[600],
 	};
 
 	return (

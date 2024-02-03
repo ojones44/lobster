@@ -1,5 +1,5 @@
-// Gluestack imports
-import { Text } from '@gluestack-ui/themed';
+// React Native Paper
+import { Text } from 'react-native-paper';
 
 const Signup = () => {
 	return <Text>Signup Page</Text>;

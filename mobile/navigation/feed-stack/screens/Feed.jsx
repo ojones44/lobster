@@ -1,15 +1,13 @@
-// Gluestack imports
-import { Center, SafeAreaView } from '@gluestack-ui/themed';
+// React Native Paper
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 // Component imports
 import ProfileCard from '../components/ProfileCard';
 
 const Feed = () => {
 	return (
-		<SafeAreaView>
-			<Center w={'100%'}>
-				<ProfileCard />
-			</Center>
+		<SafeAreaView style={{ flex: 1 }}>
+			<ProfileCard />
 		</SafeAreaView>
 	);
 };
